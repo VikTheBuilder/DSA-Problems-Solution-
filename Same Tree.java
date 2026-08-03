@@ -13,6 +13,7 @@
  *     }
  * }
  */
+//Serialize Tree using Preorder Traversal Approach-
 class Solution {
     public boolean isSameTree(TreeNode p, TreeNode q) {
         List<Integer> result1 = new ArrayList<>();
@@ -29,5 +30,17 @@ class Solution {
         list.add(root.val);
         helper(root.left, list);
         helper(root.right, list);
+    }
+}
+
+//Recursive Tree Comparison Approach-
+class Solution {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        return helper(p,q);
+    }
+    boolean helper(TreeNode p,TreeNode q){
+        if (p == null && q == null) return true;
+        if (p == null || q == null || p.val != q.val) return false;
+        return helper(p.left, q.left) && helper(p.right, q.right);
     }
 }
