@@ -13,6 +13,7 @@
  *     }
  * }
  */
+// Traversal Approach 
 class Solution {
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
