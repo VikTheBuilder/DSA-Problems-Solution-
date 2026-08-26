@@ -6,8 +6,7 @@ class Solution {
         int min = l + 1;
         String result = "";
         while(j<l){
-            if (s.charAt(j) == '1')
-                c++;
+            if (s.charAt(j) == '1')c++;
             j++;
             while(c>=k){
                 if(c==k){
@@ -22,8 +21,7 @@ class Solution {
                         }
                     }
                 }
-                if (s.charAt(i) == '1')
-                    c--;
+                if (s.charAt(i) == '1')c--;
                 i++;
             }
         }
