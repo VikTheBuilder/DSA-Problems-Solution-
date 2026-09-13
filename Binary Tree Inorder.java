@@ -27,3 +27,26 @@ class Solution {
         helper(root.right, list);
     }
 }
+//Morris Traversal--
+class Solution{
+    public List<Integer> inorderTraversal(TreeNode root){
+        List<Integer> res = new ArrayList<Integer>();
+        var curr = root;
+        while (curr != null){
+            if (curr.left == null){
+                res.add(curr.val);
+                curr = curr.right; 
+            } else { 
+                var pre = curr.left;
+                while (pre.right != null){ 
+                    pre = pre.right;
+                }
+                pre.right = curr;
+                var temp = curr; 
+                curr = curr.left; 
+                temp.left = null;
+            }
+        }
+        return res;
+    }
+}
